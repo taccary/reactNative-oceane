@@ -1,4 +1,4 @@
-## POC d'appli mobile en React Native avec Expo : Authentification JWT et consultation d'info via 2 routes d'API 
+## POC d'appli mobile en React Native avec Expo : consultation d'info via des routes d'API 
 :octocat: :iphone:
 
 
@@ -12,8 +12,7 @@ Vous aurez besoin de :
 
 ## Infos
 
-Ce dépôt contient 2 versions de l'application qui font la même chose mais la version appli-V2 est mieux conçue en termes d'architecture. Même si cette approche améliore la modularité et la maintenabilité du code, elle peut également introduire une complexité supplémentaire pour les nouveaux développeurs.
-La version appli-V2 utilise une structure de dossiers plus organisée, séparant les composants, les contextes, la navigation et les services, ce qui facilite la gestion et l'évolution du projet. Cependant, cette séparation peut nécessiter une meilleure compréhension des concepts avancés de React et de la gestion de l'état global.
+Ce dépôt contient 1 POC d'application react native qui interroge une API oceane (TP API Océane).
 
 ### Structure de l'application V2
 
@@ -48,11 +47,7 @@ appli-V2
 - assets/ : Contient les fichiers d'images et autres ressources statiques.
 - *node_modules/ : Dossier généré qui contient toutes les dépendances et modules installés via npm. Ce dossier est généré automatiquement lors de l'installation des dépendances définies dans le fichier `package.json`.*
 - src/ : Contient tout le code source de l'application.
-    - components/ : Contient les composants réutilisables.
-    - contexts/ : Contient les contextes React pour la gestion de l'état global.
-    - navigation/ : Contient les fichiers de configuration de la navigation.
-    - screens/ : Contient les composants d'écran.
-    - services/ : Contient les fichiers de services pour les appels API et autres logiques métier.
+    - MenuPage.js et autres pages : pages de l'application.
     - App.js : Point d'entrée principal de l'application.
 - index.js : Fichier de démarrage qui enregistre l'application et la rend dans le DOM.
 - app.json : Fichier de configuration pour Expo. Il contient des informations sur l'application telles que le nom, l'icône, les permissions, et d'autres paramètres spécifiques à Expo.
@@ -88,7 +83,7 @@ npx expo install --fix
 Dans le terminal, déplacez-vous dans le dossier de l'application pour laquelle vous voulez installer les dépendances :
 
 ```
-cd appli-V2
+cd appli-V1
 ```
 
 Lancez l'installation des dépendances nodes liées au projet :
