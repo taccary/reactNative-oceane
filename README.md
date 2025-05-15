@@ -1,7 +1,6 @@
 ## POC d'appli mobile en React Native avec Expo : consultation d'info via des routes d'API 
 :octocat: :iphone:
 
-
 ## Prérequis
 
 Vous aurez besoin de :
@@ -13,34 +12,27 @@ Vous aurez besoin de :
 ## Infos
 
 Ce dépôt contient 1 POC d'application react native qui interroge une API oceane (TP API Océane).
+Elle nécessite donc que vous ayez une API qui réponde publiquement sur les end-points demandés dans le code. Il faut également adapter les url et end-points de ce code à ceux servis par votre API.
 
-### Structure de l'application V2
+### Structure de l'application
 
-appli-V2
+L'architecture de l'application appli-V1 est un peu basique (affichages et taitements mélangés) et convient pour une petite application. Elle a surtout un usage pédagogique ici.
+
+appli-V1
 ├── assets/
 │   ├── adaptive-icon.png
 │   ├── favicon.png
 │   ├── logo.png
 │   └── splash.png
 ├── src/
-│   ├── components/
-│   │   └── CustomButton.js
-│   ├── contexts/
-│   │   └── AuthContext.js
-│   ├── navigation/
-│   │   └── AppNavigator.js
-│   ├── screens/
-│   │   ├── LoginPage.js
-│   │   ├── MenuPage.js
-│   │   ├── ProfilePage.js
-│   │   └── LogoutPage.js
-│   ├── services/
-│   │   └── api.js
-│   └── App.js
-├── index.js
+│   ├── App.js
+│   ├── BateauDetailsPage.js
+│   ├── BateauxPage.js
+│   └── MenuPage.js
 ├── app.json
-└── package.json
-
+├── index.js
+├── package.json
+└── yarn.lock
 
 **Explication de la structure**
 - *.expo/ : Dossier généré par Expo qui contient des fichiers de configuration et des données spécifiques à Expo pour le développement de l'application.*
