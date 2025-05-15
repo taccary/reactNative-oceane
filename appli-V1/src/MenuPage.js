@@ -7,12 +7,11 @@ export default function MenuPage() {
 
   return (
     <View style={styles.container}>
-      <Image source={require('./assets/logo.png')} style={styles.logo} />
+      <Image source={require('../assets/logo.png')} style={styles.logo} />
       <Text style={styles.title}>Menu</Text>
-      <Button
-        title="Bateaux"
+      <Button style={styles.button}
+        title="Liste des bateaux"
         onPress={() => navigation.navigate('Bateaux')}
-        color="#00BF6D"
       />
 
     </View>
@@ -27,8 +26,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-    width: 100,
-    height: 100,
+    height: 80,
     alignSelf: 'center',
   },
   title: {
@@ -36,5 +34,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginVertical: 20,
+  },
+  button: {
+    backgroundColor: '#007BFF',
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 20,
   },
 });
