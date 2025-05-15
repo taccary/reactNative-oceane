@@ -1,42 +1,20 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { AuthProvider, AuthContext } from './AuthContext';
-import LoginPage from './LoginPage';
 import MenuPage from './MenuPage';
-import ProfilePage from './ProfilePage';
-import LogoutPage from './LogoutPage';
+import BateauxPage from './BateauxPage';
+import BateauDetailsPage from './BateauDetailsPage'; // Ajout
 
 const Stack = createStackNavigator();
 
-function AppNavigator() {
-  const { isLoggedIn } = useContext(AuthContext);
-
-  useEffect(() => {
-    console.log('AppNavigator - isLoggedIn:', isLoggedIn);
-  }, [isLoggedIn]);
-
+export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {isLoggedIn ? (
-          <>
-            <Stack.Screen name="Menu" component={MenuPage} />
-            <Stack.Screen name="Profile" component={ProfilePage} />
-            <Stack.Screen name="Logout" component={LogoutPage} />
-          </>
-        ) : (
-          <Stack.Screen name="Login" component={LoginPage} />
-        )}
+        <Stack.Screen name="Menu" component={MenuPage} />
+        <Stack.Screen name="Bateaux" component={BateauxPage} />
+        <Stack.Screen name="BateauDetails" component={BateauDetailsPage} options={{ title: 'Détail du bateau' }} />
       </Stack.Navigator>
     </NavigationContainer>
-  );
-}
-
-export default function App() {
-  return (
-    <AuthProvider>
-      <AppNavigator />
-    </AuthProvider>
   );
 }

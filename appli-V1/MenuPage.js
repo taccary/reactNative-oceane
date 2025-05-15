@@ -1,8 +1,6 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import ProfilePage from './ProfilePage';
-import LogoutPage from './LogoutPage';
 
 export default function MenuPage() {
   const navigation = useNavigation();
@@ -12,15 +10,11 @@ export default function MenuPage() {
       <Image source={require('./assets/logo.png')} style={styles.logo} />
       <Text style={styles.title}>Menu</Text>
       <Button
-        title="Profil"
-        onPress={() => navigation.navigate('Profile')}
+        title="Bateaux"
+        onPress={() => navigation.navigate('Bateaux')}
         color="#00BF6D"
       />
-      <Button
-        title="Déconnexion"
-        onPress={() => navigation.navigate('Logout')}
-        color="#00BF6D"
-      />
+
     </View>
   );
 }

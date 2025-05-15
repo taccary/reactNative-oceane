@@ -75,7 +75,12 @@ Expo est un framework et une plateforme pour les applications React universelles
 Dans le terminal, saisissez :
 
 ```
-npm install -g expo-cli@latest
+npx expo install expo@latest
+```
+
+si la versio SDK avec laquelle le projet a été réalisé n'est plus la même, lancer un fix
+```
+npx expo install --fix
 ```
 
 ### 3. Installation des dépendances dans le dossier de l'application
