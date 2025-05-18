@@ -124,8 +124,19 @@ Si vous loggez des étapes dans le code (console.log()), vous verrez ces logs de
 
 ## En plus...
 
+https://docs.expo.dev/tutorial/create-your-first-app/
+
 Si vous voulez créer une nouvelle application "vide", à la place de l'étape 3, il faudra executer la commande :
 
 ```
-expo init native-app
+npx create-expo-app@latest monAppli
+```
+
+Cette commande va créer un nouveau répertoire de projet nommé monAppli, en utilisant le modèle par défaut. 
+Ce modèle contient le code de base essentiel et les bibliothèques nécessaires à la construction de notre application, y compris Expo Router. 
+
+
+Ensuite dans le dossier de l'appli, 
+```
+npx expo start
 ```
