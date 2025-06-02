@@ -1,7 +1,7 @@
 import { API_BASE_URL } from './config';
 import { IMAGES_URL } from './config';
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, Image, FlatList, ActivityIndicator, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, Button, StyleSheet, Image, FlatList, ActivityIndicator, Alert, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export default function BateauxPage() {
@@ -12,7 +12,7 @@ export default function BateauxPage() {
   useEffect(() => {
     const fetchBateaux = async () => {
       try {
-        const response = await fetch(`${API_BASE_URL}/bateaux`);
+        const response = await fetch('${API_BASE_URL}/bateaux');
         if (response.status === 200) {
           const data = await response.json();
           setBateaux(data);
@@ -37,6 +37,8 @@ export default function BateauxPage() {
     );
   }
 
+
+
   const renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => navigation.navigate('BateauDetails', { bateau: item.id })}>
       <View style={styles.card}>
@@ -55,6 +57,7 @@ export default function BateauxPage() {
 
   return (
     <View style={styles.container}>
+      <Button style={styles.title} title="Ajouter un bateaux" onPress={() => navigation.navigate('AjoutBateaux')}/>
       <FlatList
         data={bateaux}
         keyExtractor={item => item.id.toString()}
@@ -98,5 +101,11 @@ const styles = StyleSheet.create({
   details: {
     fontSize: 12,
     color: '#666',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginVertical: 20,
   },
 });

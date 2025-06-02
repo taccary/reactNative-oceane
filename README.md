@@ -65,7 +65,7 @@ Dans le terminal, saisissez :
 npx expo install expo@latest
 ```
 
-si la versio SDK avec laquelle le projet a été réalisé n'est plus la même, lancer un fix
+si la version SDK avec laquelle le projet a été réalisé n'est plus la même, lancer un fix
 ```
 npx expo install --fix
 ```

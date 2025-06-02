@@ -1,0 +1,2 @@
+export const API_BASE_URL = 'https://miniature-space-capybara-4gg477rxxrx2jvgw-8000.app.github.dev/api';
+export const IMAGES_URL = `https://miniature-space-capybara-4gg477rxxrx2jvgw-8000.app.github.dev/storage/images`;
