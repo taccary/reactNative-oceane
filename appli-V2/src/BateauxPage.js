@@ -12,7 +12,7 @@ export default function BateauxPage() {
   useEffect(() => {
     const fetchBateaux = async () => {
       try {
-        const response = await fetch('${API_BASE_URL}/bateaux');
+        const response = await fetch(`${API_BASE_URL}/bateaux`);
         if (response.status === 200) {
           const data = await response.json();
           setBateaux(data);
@@ -57,12 +57,15 @@ export default function BateauxPage() {
 
   return (
     <View style={styles.container}>
-      <Button style={styles.title} title="Ajouter un bateaux" onPress={() => navigation.navigate('AjoutBateaux')}/>
+      <Text style={styles.title}>🚢 Catalogue des bateaux</Text>
+      <Text style={styles.subtitle}>Découvrez notre flotte</Text>
       <FlatList
         data={bateaux}
         keyExtractor={item => item.id.toString()}
         renderItem={renderItem}
         contentContainerStyle={{ paddingBottom: 20 }}
+        showsVerticalScrollIndicator={false}
+        style={{ flex: 1 }}
       />
     </View>
   );
@@ -71,16 +74,37 @@ export default function BateauxPage() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
-    padding: 8,
+    backgroundColor: '#f8f9fa',
+    padding: 16,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 8,
+    color: '#333',
+  },
+  subtitle: {
+    fontSize: 16,
+    textAlign: 'center',
+    marginBottom: 20,
+    color: '#666',
+    fontStyle: 'italic',
   },
   card: {
     flexDirection: 'row',
-    backgroundColor: '#F5F5F5',
-    borderRadius: 10,
+    backgroundColor: 'white',
+    borderRadius: 12,
     marginVertical: 8,
-    padding: 10,
+    padding: 12,
     elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
   },
   photo: {
     width: 90,
@@ -97,15 +121,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 4,
+    color: '#333',
   },
   details: {
     fontSize: 12,
     color: '#666',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginVertical: 20,
+    marginBottom: 2,
   },
 });

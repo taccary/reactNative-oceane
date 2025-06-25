@@ -15,7 +15,7 @@ export default function BateauDetailPage({ route }) {
     
     const fetchBateau = async () => {
       try {
-        const response = await fetch(`${API_BASE_URL}/${bateauId}`);
+        const response = await fetch(`${API_BASE_URL}/bateaux/${bateauId}`);
         if (response.status === 200) {
           const data = await response.json();
           setBateau(data);
@@ -51,7 +51,7 @@ export default function BateauDetailPage({ route }) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Image
-        source={{ uri: `${IMAGES_URL}/${bateau.photo}` }}
+        source={{ uri: `${IMAGES_URL}/bateaux/${bateau.photo}` }}
         style={styles.photo}
       />
       <Text style={styles.nom}>{bateau.nom}</Text>
@@ -60,19 +60,6 @@ export default function BateauDetailPage({ route }) {
       <Text style={styles.details}>Largeur : {bateau.largeur} m</Text>
       <Text style={styles.details}>Vitesse : {bateau.vitesse_croisiere} nœuds</Text>
       <Text style={styles.details}>Niveau PMR : {bateau.niveauPMR}</Text>
-      if ()
-      <TouchableOpacity
-        style={styles.greenButton}
-        onPress={() => navigation.navigate('ModifBateaux', { bateau: bateau.id})}
-      >
-        <Text style={styles.buttonText}>Modifier le bateau</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.redButton}
-        onPress={() => navigation.navigate('SuppBateaux', { bateau:  bateau.id })}
-      >
-        <Text style={styles.buttonText}>Supprimer le bateau</Text>
-      </TouchableOpacity>
     </ScrollView>
   );
 }

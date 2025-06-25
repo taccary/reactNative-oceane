@@ -70,6 +70,10 @@ si la version SDK avec laquelle le projet a été réalisé n'est plus la même,
 npx expo install --fix
 ```
 
+Pour que l'application Expo puisse aussi être executée dans un navigateur, installer les composants nécessaires :
+```
+npx expo install react-dom react-native-web @expo/metro-runtime
+```
 ### 3. Installation des dépendances dans le dossier de l'application
 
 Dans le terminal, déplacez-vous dans le dossier de l'application pour laquelle vous voulez installer les dépendances :

@@ -5,6 +5,7 @@ import MenuPage from './MenuPage';
 import PageLogin from './AuthentificationPage';
 import PageLogout from './AuthentificationPage';
 import BateauxPage from './BateauxPage';
+import BateauxCRUDPage from './BateauxCRUDPage';
 import BateauDetailsPage from './BateauDetailsPage';
 import BateauxPageAjout from './BateauxPageAjout';
 import BateauxPageModif from './BateauxPageModif';
@@ -23,6 +24,7 @@ export default function App() {
         <Stack.Screen name="Logout" component={PageLogout} options={{title: 'Page de deconnexion'}}/>
         
         <Stack.Screen name="Bateaux" component={BateauxPage} options={{ title: 'Nos bateaux' }}/>
+        <Stack.Screen name="BateauxCRUD" component={BateauxCRUDPage} options={{ title: 'Gestion des bateaux' }}/>
         <Stack.Screen name="BateauDetails" component={BateauDetailsPage} options={{ title: 'Détail du bateau' }} />
 
         <Stack.Screen name="AjoutBateaux" component={BateauxPageAjout} options={{title: 'Ajouter un bateau'}}/>

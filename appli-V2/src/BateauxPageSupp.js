@@ -1,5 +1,6 @@
 import { API_BASE_URL } from './config';
 import { IMAGES_URL } from './config';
+import { authenticatedFetch, isLoggedIn } from './authUtils';
 import React, {useEffect,useState } from 'react';
 import { View, Text, Button, Alert, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -11,8 +12,24 @@ export default function BateauxPageSupp({ route }) {
     const navigation = useNavigation();
 
     useEffect(() => {
-        
-        const fetchBateau = async () => {
+        const checkAuthAndFetch = async () => {
+          // Vérifier l'authentification
+          const loggedIn = await isLoggedIn();
+          if (!loggedIn) {
+            Alert.alert(
+              'Authentification requise', 
+              'Vous devez être connecté pour supprimer un bateau',
+              [
+                {
+                  text: 'OK',
+                  onPress: () => navigation.navigate('Login')
+                }
+              ]
+            );
+            return;
+          }
+
+          // Récupérer les données du bateau
           try {
             const response = await fetch(`${API_BASE_URL}/bateaux/${bateauId}`);
             if (response.status === 200) {
@@ -28,29 +45,41 @@ export default function BateauxPageSupp({ route }) {
           }
         };
     
-        fetchBateau();
-      }, [bateauId]);
+        checkAuthAndFetch();
+      }, [bateauId, navigation]);
 
       const handleSubmit = async () => {
+      // Vérifier l'authentification avant la suppression
+      const loggedIn = await isLoggedIn();
+      if (!loggedIn) {
+        Alert.alert('Non authentifié', 'Veuillez vous connecter pour supprimer un bateau');
+        navigation.navigate('Login');
+        return;
+      }
 
       try {
-          const response = await fetch(`${API_BASE_URL}/bateaux/${bateauId}`, {
-            method: 'DESTROY',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(bateau),
+          const response = await authenticatedFetch(`${API_BASE_URL}/bateaux/${bateauId}`, {
+            method: 'DELETE', // Correction: DELETE au lieu de DESTROY
           });
       
           if (response.ok) {
-            Alert.alert('Succès', 'Le bateau a été supprimer avec succès');
+            Alert.alert('Succès', 'Le bateau a été supprimé avec succès');
             navigation.navigate('Bateaux');
+          } else if (response.status === 401) {
+            Alert.alert('Session expirée', 'Veuillez vous reconnecter');
+            navigation.navigate('Login');
           } else {
             const data = await response.json();
             Alert.alert('Erreur', data.message || 'Une erreur est survenue lors de la suppression');
           }
         } catch (error) {
-          Alert.alert('Erreur', 'Impossible de contacter le serveur');
+          console.error('Erreur:', error);
+          if (error.message.includes('Token')) {
+            Alert.alert('Non authentifié', 'Veuillez vous connecter');
+            navigation.navigate('Login');
+          } else {
+            Alert.alert('Erreur', 'Impossible de contacter le serveur');
+          }
         }
       };
 
