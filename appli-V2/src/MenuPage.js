@@ -103,12 +103,19 @@ export default function MenuPage() {
         <Text style={styles.buttonText}>⚓ Liste des ports</Text>
       </TouchableOpacity>
 
-      <Text style={styles.sectionTitle}>⚙️ Gestion des bateaux</Text>
+      <Text style={styles.sectionTitle}>⚙️ Gestion</Text>
       <TouchableOpacity 
         style={styles.menuButton} 
         onPress={() => navigation.navigate('BateauxCRUD')}
       >
         <Text style={styles.buttonText}>🔧 Gérer les bateaux (CRUD)</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+        style={styles.menuButton} 
+        onPress={() => navigation.navigate('PortsCRUD')}
+      >
+        <Text style={styles.buttonText}>⚓ Gérer les ports (CRUD)</Text>
       </TouchableOpacity>
 
       <TouchableOpacity 

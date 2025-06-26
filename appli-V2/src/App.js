@@ -10,7 +10,10 @@ import BateauDetailsPage from './BateauDetailsPage';
 import BateauxPageAjout from './BateauxPageAjout';
 import BateauxPageModif from './BateauxPageModif';
 import BateauxPageSupp from './BateauxPageSupp';
-import PortsPage from './PortsPage';  // Ajout
+import PortsPage from './PortsPage';
+import PortsCRUDPage from './PortsCRUDPage';
+import PortsPageAjout from './PortsPageAjout';
+import PortsPageModif from './PortsPageModif';
 
 const Stack = createStackNavigator();
 
@@ -32,6 +35,9 @@ export default function App() {
         <Stack.Screen name="SuppBateaux" component={BateauxPageSupp} options={{title: 'Supprimer un bateau'}}/>
         
         <Stack.Screen name="Ports" component={PortsPage} options={{title: 'Nos Ports' }}/>
+        <Stack.Screen name="PortsCRUD" component={PortsCRUDPage} options={{title: 'Gestion des ports' }}/>
+        <Stack.Screen name="AjoutPorts" component={PortsPageAjout} options={{title: 'Ajouter un port'}}/>
+        <Stack.Screen name="ModifPorts" component={PortsPageModif} options={{title: 'Modifier un port'}}/>
         
       </Stack.Navigator>
     </NavigationContainer>

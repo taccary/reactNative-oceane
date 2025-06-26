@@ -8,9 +8,12 @@ const pagesToTest = [
   'src/BateauxPage.js',
   'src/BateauxCRUDPage.js',
   'src/PortsPage.js',
+  'src/PortsCRUDPage.js',
   'src/AuthentificationPage.js',
   'src/BateauxPageAjout.js',
-  'src/BateauxPageModif.js'
+  'src/BateauxPageModif.js',
+  'src/PortsPageAjout.js',
+  'src/PortsPageModif.js'
 ];
 
 console.log('🧪 Test de vérification des pages...\n');
