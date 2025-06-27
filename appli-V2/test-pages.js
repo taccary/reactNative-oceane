@@ -13,7 +13,11 @@ const pagesToTest = [
   'src/BateauxPageAjout.js',
   'src/BateauxPageModif.js',
   'src/PortsPageAjout.js',
-  'src/PortsPageModif.js'
+  'src/PortsPageModif.js',
+  'src/SecteursPage.js',
+  'src/SecteursCRUDPage.js',
+  'src/SecteursPageAjout.js',
+  'src/SecteursPageModif.js'
 ];
 
 console.log('🧪 Test de vérification des pages...\n');

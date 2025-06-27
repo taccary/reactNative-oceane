@@ -14,6 +14,10 @@ import PortsPage from './PortsPage';
 import PortsCRUDPage from './PortsCRUDPage';
 import PortsPageAjout from './PortsPageAjout';
 import PortsPageModif from './PortsPageModif';
+import SecteursPage from './SecteursPage';
+import SecteursCRUDPage from './SecteursCRUDPage';
+import SecteursPageAjout from './SecteursPageAjout';
+import SecteursPageModif from './SecteursPageModif';
 
 const Stack = createStackNavigator();
 
@@ -38,6 +42,11 @@ export default function App() {
         <Stack.Screen name="PortsCRUD" component={PortsCRUDPage} options={{title: 'Gestion des ports' }}/>
         <Stack.Screen name="AjoutPorts" component={PortsPageAjout} options={{title: 'Ajouter un port'}}/>
         <Stack.Screen name="ModifPorts" component={PortsPageModif} options={{title: 'Modifier un port'}}/>
+        
+        <Stack.Screen name="Secteurs" component={SecteursPage} options={{title: 'Nos secteurs' }}/>
+        <Stack.Screen name="SecteursCRUD" component={SecteursCRUDPage} options={{title: 'Gestion des secteurs' }}/>
+        <Stack.Screen name="AjoutSecteurs" component={SecteursPageAjout} options={{title: 'Ajouter un secteur'}}/>
+        <Stack.Screen name="ModifSecteurs" component={SecteursPageModif} options={{title: 'Modifier un secteur'}}/>
         
       </Stack.Navigator>
     </NavigationContainer>

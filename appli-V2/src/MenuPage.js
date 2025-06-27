@@ -61,6 +61,13 @@ export default function MenuPage() {
       >
         <Text style={styles.buttonText}>⚓ Liste des ports</Text>
       </TouchableOpacity>
+      
+      <TouchableOpacity 
+        style={styles.menuButton} 
+        onPress={() => navigation.navigate('Secteurs')}
+      >
+        <Text style={styles.buttonText}>🗺️ Liste des secteurs</Text>
+      </TouchableOpacity>
     </View>
   );
 
@@ -102,6 +109,13 @@ export default function MenuPage() {
       >
         <Text style={styles.buttonText}>⚓ Liste des ports</Text>
       </TouchableOpacity>
+      
+      <TouchableOpacity 
+        style={styles.menuButton} 
+        onPress={() => navigation.navigate('Secteurs')}
+      >
+        <Text style={styles.buttonText}>🗺️ Liste des secteurs</Text>
+      </TouchableOpacity>
 
       <Text style={styles.sectionTitle}>⚙️ Gestion</Text>
       <TouchableOpacity 
@@ -116,6 +130,13 @@ export default function MenuPage() {
         onPress={() => navigation.navigate('PortsCRUD')}
       >
         <Text style={styles.buttonText}>⚓ Gérer les ports (CRUD)</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+        style={styles.menuButton} 
+        onPress={() => navigation.navigate('SecteursCRUD')}
+      >
+        <Text style={styles.buttonText}>🗺️ Gérer les secteurs (CRUD)</Text>
       </TouchableOpacity>
 
       <TouchableOpacity 
