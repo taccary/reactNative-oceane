@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "monAppli",
-    "slug": "monAppli",
+    "name": "appli-multi-onglets",
+    "slug": "appli-multi-onglets",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "monappli",
+    "scheme": "appli-multi-onglets",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {

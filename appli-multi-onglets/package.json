@@ -1,5 +1,5 @@
 {
-  "name": "monappli",
+  "name": "appli-multi-onglets",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
