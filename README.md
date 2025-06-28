@@ -100,7 +100,7 @@ npx expo login
 
 ### 5. Démarrer l'application
 
-Démarrez l'application pour la tester sur notre propre appareil mobile. 
+Démarrez l'application pour la tester sur notre propre appareil mobile depuis n'importe quel réseau. 
 Dans le terminal, depuis le dossier de l'application, lancez la commande suivante :
 
 ```
@@ -133,10 +133,10 @@ https://docs.expo.dev/tutorial/create-your-first-app/
 Si vous voulez créer une nouvelle application "vide", à la place de l'étape 3, il faudra executer la commande :
 
 ```
-npx create-expo-app@latest monAppli
+npx create-expo-app@latest appli-monAppli
 ```
 
-Cette commande va créer un nouveau répertoire de projet nommé monAppli, en utilisant le modèle par défaut. 
+Cette commande va créer un nouveau répertoire de projet nommé appli-monAppli, en utilisant le modèle par défaut. 
 Ce modèle contient le code de base essentiel et les bibliothèques nécessaires à la construction de notre application, y compris Expo Router. 
 
 

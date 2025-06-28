@@ -1,6 +1,19 @@
-# ✅ Résumé des corrections apportées à l'application React Native
+# ✅ Résumé des corrections apportées à l'application React Nati## 🚀 Comment tester
 
-## 🔧 Problèmes résolus
+1. **Démarrer l'application** :
+   ```bash
+   cd /workspaces/reactNative-oceane/appli-oceane-V2
+   npx expo start --clear --tunnel
+   ```
+
+2. **Vider le cache si problème d'icône** :
+   ```bash
+   rm -rf .expo node_modules
+   npm install
+   npx expo start --clear --tunnel
+   ```
+
+3. **Tester le scroll** : Problèmes résolus
 
 ### 1. **Problème d'alerte de suppression**
 - **Problème** : La fenêtre d'alerte de suppression ne s'affichait pas
@@ -65,7 +78,7 @@
 
 1. **Démarrer l'application** :
    ```bash
-   cd /workspaces/reactNative-oceane/appli-V2
+   cd /workspaces/reactNative-oceane/appli-oceane-V2
    npx expo start
    ```
 
