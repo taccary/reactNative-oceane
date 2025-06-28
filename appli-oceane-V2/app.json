@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "native-app",
-    "slug": "oceane-secteurs-v2",
+    "name": "appli-oceane-V2",
+    "slug": "appli-oceane-V2",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/adaptive-icon.png",
+    "icon": "./assets/logo.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
