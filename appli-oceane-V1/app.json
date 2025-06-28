@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "native-app",
-    "slug": "native-app",
+    "name": "appli-oceane-V1",
+    "slug": "appli-oceane-V1",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/logo.png",
